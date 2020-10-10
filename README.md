@@ -118,7 +118,7 @@ Set up hostname by typing it into `/etc/hostname` (just type the hostname in and
 ```
 
 ### Boot loader
-You need boot loader. For this I grab GRUB as my weapon of choice:
+You need boot loader. For this I grab GRUB as my weapon of choice ([setup with UEFI](https://wiki.archlinux.org/index.php/GRUB#UEFI_systems)):
 ```bash
 $ pacman -S grub
 $ grub-install /dev/sda   #if error, add --recheck  to the command
