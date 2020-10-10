@@ -3,7 +3,7 @@ This is my personal collection of notes and guidelines to install Arch Linux on 
 
 You can for sure follow this to install Arch on your own machine. Just consider following notes, those might be different for you:
 * I have BIOS. Not UEFI. So the installation is different for you if you have UEFI (I have tried to put notice in places where it differs).
-* I am using Wifi internet connection.
+* I am using Wifi internet connection. My device has drivers already included in the Arch ISO.
 * I am booting from USB
 * I have root and swap partitions
 
