@@ -2,7 +2,7 @@
 This is my personal collection of notes and guidelines to install Arch Linux on my T450. This is nothing official and there is no guarantee it will work for you. This is just how I do it.
 
 You can for sure follow this to install Arch on your own machine. Just consider following notes, those might be different for you:
-* I have BIOS. Not UEFI. So the installation is different for you if you have UEFI. Do not follow my guidelines, it won't do any good.
+* I have BIOS. Not UEFI. So the installation is different for you if you have UEFI (I have tried to put notice in places where it differs).
 * I am using Wifi internet connection.
 * I am booting from USB
 * I have root and swap partitions
