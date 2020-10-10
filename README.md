@@ -22,22 +22,24 @@ You obviously would be good with internet. I use `iwd` to connect in the live bo
 
 Next, fire up `iwctl` program which opens its own shell. First, check out the devices:
 ```bash
-[iwd]# device list
+[iwd]$ device list
 ```
+
 If you see your the previously mentioned wireless interface, good. Scan and list all networks with it:
 ```bash
-[iwd]# station wlan0 scan
+[iwd]$ station wlan0 scan
+[iwd]$ station wlan0 get-networks
 ```
-```bash
-[iwd]# station wlan0 get-networks
-```
+
 At this point I usually exit the `iwd` and connect to the network with this command (you can omit the --passphrase if there is none):
 ```bash
 $ iwctl --passphrase myNetworkPassword station wlan0 connect myNetworkSSID
 ```
+
 And if you `ping github.com` you should receive a response! You are good to go for the preinstallation configuration.
 
 *Keep in mind that this connection is just for the booted system, not for the actual installed one. I do cover Network Manager installation at the very end of the document*
+
 ## Preinstallation configuration
 Now we need to create partition and format disk. This will actually erase the disk data so if you have anything that needs to be backed up, go back and do it now.
 
@@ -47,6 +49,7 @@ This opens the disk formatter tool on the `/dev/sda` drive. I'm not gonna cover 
 ```bash
 fdisk /dev/sda
 ```
+
 What I did was create swap partition `/dev/sda2` of 4GB and the rest is root partition `/dev/sda1`. You can skip the swap partition and go on without next commands related to swap (there is two of them only). **For UEFI systems you also need efi partition. See Arch Wiki for more info.**
 
 Now, format the root and swap partitions:
@@ -54,11 +57,27 @@ Now, format the root and swap partitions:
 $ mkfs.ext4 /dev/sda1
 $ mkswap /dev/sda2
 ```
+
 Activate the swap partition and mount the root partition:
 ```bash
 $ mount /dev/sda1 /mnt
 $ swapon /dev/sda2
 ```
-## Installation
+
+## Install and configure
 If you have end up doing all of the above without any issue, well done! Now it's gonna be just about having fun.
 
+Install the Arch. I also threw in Vim because there is no text editor:
+```bash
+$ pacstrap /mnt base linux linux-firmware vim # you can substitute vim for nano or other text editors
+```
+
+Once that's done, generate some super important file that tells Arch how partitions and file systems are set up:
+```bash
+$ genfstab -U /mnt >> /mnt/etc/fstab
+```
+
+Now, we need to set up few things like locale, timezones and install some packages.
+```bash
+arch-chroot /mnt
+```
