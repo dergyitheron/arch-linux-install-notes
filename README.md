@@ -182,9 +182,9 @@ $ EDITOR=vim visudo #you can substitute vim with nano or other editor, this is t
 
 In the edited file find root record and add `derg ALL=(ALL) ALL` bellow it. Save and close.
 
-Now, to install KDE Plasma DE you need bunch of stuff. Fortunately, they are all bundled and you need one command to install it all. There might be some packages you don't need, I decided to install it all and go through it after I boot into the system with DE.
+Now, to install KDE Plasma DE you need bunch of stuff. To simply have plasma you just need `plasma` and `xorg`. The rest is something extra.
 ```bash
-$ pacman -S xorg plasma plasma-wayland-session kde-applications 
+$ pacman -S xorg plasma plasma-wayland-session doplhin yakuake firefox
 ```
 
 After done, enable the display manager service:
