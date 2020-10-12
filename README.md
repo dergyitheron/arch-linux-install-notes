@@ -82,9 +82,8 @@ Now, we need to set up few things like locale, timezones and install some packag
 $ arch-chroot /mnt
 ```
 
-Update packages and database:
+Update packages:
 ```bash
-$ pacman -Syy
 $ pacman -Syu
 ```
 
