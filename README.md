@@ -159,7 +159,7 @@ After you reboot, you have to log in with root and password set in earlier steps
 $ systemctl start NetworkManager.service
 ```
 
-For network management there is `nmctl` command:
+For network management there is `nmcli` command:
 ```bash
 $ nmcli device wifi list    #get list of available wifi networks
 $ nmcli device wifi connect myNetworkSSID password myNetworkPassword    #connects you to myNetworkSSID
@@ -181,9 +181,9 @@ $ EDITOR=vim visudo #you can substitute vim with nano or other editor, this is t
 
 In the edited file find root record and add `derg ALL=(ALL) ALL` bellow it. Save and close.
 
-Now, to install KDE Plasma DE you need bunch of stuff. To simply have plasma you just need `plasma` and `xorg`. The rest is something extra.
+Now, to install KDE Plasma DE you need bunch of stuff. To simply have plasma you just need `plasma` and `xorg`. The rest is something extra. You can also install `kde-applications`, but I prefer installing single packages one by one. (See [this page](https://wiki.archlinux.org/index.php/KDE#Installation) for more details)
 ```bash
-$ pacman -S xorg plasma plasma-wayland-session doplhin yakuake firefox
+$ pacman -S xorg plasma plasma-wayland-session doplhin yakuake firefox yay
 ```
 
 After done, enable the display manager service:
