@@ -10,7 +10,7 @@ F2                      #factor in all files in project
 Ctrl + B                #hide left menu
 ```
 ## vscode json settings
-```json
+```js
 //add this to setting.json
 {
     "git.enableSmartCommit": true,
