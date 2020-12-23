@@ -9,8 +9,8 @@ Ctrl + /                #comment line
 F2                      #factor in all files in project
 Ctrl + B                #hide left menu
 ```
-## cool config
-```js
+## vscode json settings
+```json
 //add this to setting.json
 {
     "git.enableSmartCommit": true,
@@ -52,6 +52,67 @@ Ctrl + B                #hide left menu
     "extensions.ignoreRecommendations": true,
     "tabnine.experimentalAutoImports": true,
     "omnisharp.useEditorFormattingSettings": false,
+}
+```
+## omnisharp json settings
+```json
+{
+  "FormattingOptions": {
+    "organizeImports": false,
+    "NewLine": "\n",
+    "UseTabs": false,
+    "TabSize": 2,
+    "IndentationSize": 2,
+    "SpacingAfterMethodDeclarationName": false,
+    "SpaceWithinMethodDeclarationParenthesis": false,
+    "SpaceBetweenEmptyMethodDeclarationParentheses": false,
+    "SpaceAfterMethodCallName": false,
+    "SpaceWithinMethodCallParentheses": false,
+    "SpaceBetweenEmptyMethodCallParentheses": false,
+    "SpaceAfterControlFlowStatementKeyword": true,
+    "SpaceWithinExpressionParentheses": false,
+    "SpaceWithinCastParentheses": false,
+    "SpaceWithinOtherParentheses": false,
+    "SpaceAfterCast": false,
+    "SpacesIgnoreAroundVariableDeclaration": false,
+    "SpaceBeforeOpenSquareBracket": false,
+    "SpaceBetweenEmptySquareBrackets": false,
+    "SpaceWithinSquareBrackets": false,
+    "SpaceAfterColonInBaseTypeDeclaration": true,
+    "SpaceAfterComma": true,
+    "SpaceAfterDot": false,
+    "SpaceAfterSemicolonsInForStatement": true,
+    "SpaceBeforeColonInBaseTypeDeclaration": true,
+    "SpaceBeforeComma": false,
+    "SpaceBeforeDot": false,
+    "SpaceBeforeSemicolonsInForStatement": false,
+    "SpacingAroundBinaryOperator": "single",
+    "IndentBraces": false,
+    "IndentBlock": true,
+    "IndentSwitchSection": true,
+    "IndentSwitchCaseSection": true,
+    "IndentSwitchCaseSectionWhenBlock": true,
+    "LabelPositioning": "oneLess",
+    "WrappingPreserveSingleLine": true,
+    "WrappingKeepStatementsOnSingleLine": true,
+
+    "NewLinesForBracesInLambdaExpressionBody": false,
+    "NewLinesForBracesInAnonymousMethods": false,
+    "NewLinesForBracesInAnonymousTypes": false,
+    "NewLinesForBracesInControlBlocks": false,
+    "NewLinesForBracesInTypes": false,
+    "NewLinesForBracesInMethods": false,
+    "NewLinesForBracesInProperties": false,
+    "NewLinesForBracesInObjectCollectionArrayInitializers": false,
+    "NewLinesForBracesInAccessors": false,
+    "NewLineForElse": false,
+    "NewLineForCatch": false,
+    "NewLineForFinally": false,
+
+    "NewLineForMembersInObjectInit": true,
+    "NewLineForMembersInAnonymousTypes": true,
+    "NewLineForClausesInQuery": true
+  }
 }
 
 ```
