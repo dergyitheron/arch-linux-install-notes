@@ -47,10 +47,11 @@ alias ll='exa -alhgF'
 
 #### prompt formatting ####
 txtcyn='\[\e[0;96m\]'
-txtred='\[\e[31m\]'
 txtyel='\[\e[0;33m\]'
 txtwhi='\[\e[37m\]'
 txtblu='\[\e[34m\]'
+txtcya='\[\033[;94m\]'
+txtred='\[\033[1;31m\]'
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -59,7 +60,10 @@ function gitBranch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+## prompt with some written info about current session
 export PS1="\n${txtyel}┌─⭘ ${bold}\u ${normal}${txtwhi}in ${txtcyn}\w ${txtwhi}at ${txtblu}\$(date +'%T') ${txtred}\$(gitBranch)${txtwhi}\n${txtyel}└─⭘ ${txtwhi}"
+## prompt inspired by kali container
+export PS1="\n${txtcya}┌──(${txtred}${bold}\u${normal}${txtcya})──[${txtwhi}\w${txtcya}] ${txtcyn}\$(gitBranch)${txtwhi}\n${txtcya}└─⭘ ${txtwhi}"
 
 #### nvm scripts path ####
 export NVM_DIR="$HOME/.nvm"
