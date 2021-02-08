@@ -52,6 +52,15 @@ Ctrl + B                #hide left menu
     "extensions.ignoreRecommendations": true,
     "tabnine.experimentalAutoImports": true,
     "omnisharp.useEditorFormattingSettings": false,
+    "[vue]": {
+        "editor.defaultFormatter": "octref.vetur"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }
 ```
 ## omnisharp json settings
