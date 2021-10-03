@@ -59,9 +59,6 @@ normal=$(tput sgr0)
 function gitBranch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
-
-## prompt with some written info about current session
-export PS1="\n${txtyel}┌─⭘ ${bold}\u ${normal}${txtwhi}in ${txtcyn}\w ${txtwhi}at ${txtblu}\$(date +'%T') ${txtred}\$(gitBranch)${txtwhi}\n${txtyel}└─⭘ ${txtwhi}"
 ## prompt inspired by kali container
 export PS1="\n${txtcya}┌──(${txtred}${bold}\u${normal}${txtcya})──[${txtwhi}\w${txtcya}] ${txtcyn}\$(gitBranch)${txtwhi}\n${txtcya}└─⭘ ${txtwhi}"
 
@@ -73,11 +70,6 @@ export NVM_DIR="$HOME/.nvm"
 #### deno scripts path ####
 export DENO_INSTALL="/home/derg/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
-
-#### yay update checker ####
-function getRelevantUpdates() {
-  echo n | yay 1,2> /dev/null && yay -Qu | grep -o '^\S*' |  grep -f ~/.yay_pkgs
-}
 
 res=$(getRelevantUpdates)
 echo -e "\e[39mRelevant package updates ($(echo ${res} | wc -w)): \e[92;1m$(echo ${res//[[:space:]]/, })"
